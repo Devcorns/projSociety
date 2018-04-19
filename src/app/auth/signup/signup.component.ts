@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms
 import { OwnerRegisterService } from './owner-register.service'
 
 
+
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -29,9 +30,11 @@ export class SignupComponent implements OnInit {
 
   signupform(data){
     console.log(data);
-    this.registerService.registerOwner()
+    this.registerService.registerOwner(data)
     .subscribe(data=>{
-      console.log(this);
+      console.log(data);
+    },err=>{
+      console.log(err);
     });
 
   }
