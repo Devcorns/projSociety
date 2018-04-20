@@ -3,24 +3,32 @@ const app = express();
 const bodyParser = require('body-parser');
 var mongo = require('mongodb');
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb://localhost:27017/mydb";
+var url = "mongodb://localhost:27017/society";
 // Add headers
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     next();
 });
 
 
-
-
-
-app.get('/hello-world', (req, res) => res.send('Hello World!'))
-
 app.post('/api/register', function(req, res) {
-    
-    res.json('register User')
+
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("society");
+
+        dbo.collection("customers").insertOne(req.body, function(err, res) {
+            if (err) throw err;
+            console.log("Signup Done");
+            db.close();
+        });
+    });
+
+
+
+
 })
 
 

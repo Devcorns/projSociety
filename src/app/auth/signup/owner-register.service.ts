@@ -15,7 +15,7 @@ export class OwnerRegisterService {
     
    }
    registerOwner(data): Observable<any>{
-    console.log(this.headers);
+    //console.log(data.value);
     return this.http.post<any>(this.configUrl, data.value, {headers:this.headers});
     
    }

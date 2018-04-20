@@ -29,10 +29,10 @@ export class SignupComponent implements OnInit {
 
 
   signupform(data){
-    console.log(data);
+    // console.log(data);
     this.registerService.registerOwner(data)
-    .subscribe(data=>{
-      console.log(data);
+    .subscribe(response=>{
+      //console.log("now response is "+response);
     },err=>{
       console.log(err);
     });
