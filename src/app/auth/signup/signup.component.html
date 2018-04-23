@@ -3,7 +3,7 @@
     <div fxFlex="320px">
         <mat-card>
             <div fxLayout="column">
-                <div class="logo" fxLayoutAlign="center center">
+                <div class="logo hide" fxLayoutAlign="center center">
                     <img src="http://www.eatlogos.com/building_logos/png/vector_line_buildings_logo.png" alt="Devcorns innovation">
                 </div>
                 <form class="example-form" [formGroup]="signupForm" (submit)=signupform(signupForm)>
@@ -19,7 +19,7 @@
                     <mat-form-field class="mat-block">
                         <input matInput formControlName="passwordRe" placeholder="Re Password">
                     </mat-form-field>
-                    <button class="mat-block" mat-raised-button color="primary">Sign up</button>
+                    <button class="mat-block" [disabled]=signupForm.invalid mat-raised-button color="primary">Sign up</button>
 
 
 

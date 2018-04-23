@@ -1,12 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-.center-panel-box{
-    .logo{
-        & img{
-            width:200px;
+.hide {
+    display: none !important;
+}
+
+.center-panel-box {
+    .logo {
+        & img {
+            width: 200px;
         }
     }
 }
-.mat-block{
-    width:100%;
+
+.mat-block {
+    width: 100%;
 }
