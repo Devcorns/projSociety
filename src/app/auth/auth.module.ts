@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
+import { CookieService } from 'ngx-cookie-service';
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -17,6 +19,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatCardModule } from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -30,8 +33,10 @@ import {MatButtonModule} from '@angular/material/button';
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
     HttpClientModule
   ],
-  declarations: [LoginComponent, SignupComponent]
+  declarations: [LoginComponent, SignupComponent],
+  providers:[CookieService]
 })
 export class AuthModule { }

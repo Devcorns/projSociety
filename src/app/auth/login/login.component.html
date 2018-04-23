@@ -1,3 +1,31 @@
-<p>
-  login works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
+  
+      <div fxFlex="320px">
+          <mat-card>
+              <div fxLayout="column">
+                  <div class="logo hide" fxLayoutAlign="center center">
+                      <img src="http://www.eatlogos.com/building_logos/png/vector_line_buildings_logo.png" alt="Devcorns innovation">
+                  </div>
+                  <form class="example-form" [formGroup]="loginForm" (submit)=loginform(loginForm)>
+                      <mat-form-field class="mat-block">
+                          <input matInput formControlName="flatNo" placeholder="Flat No">
+                      </mat-form-field>
+                      
+                      <mat-form-field class="mat-block">
+                          <input matInput formControlName="passwordOne" placeholder=" Password">
+                      </mat-form-field>
+                      <div class="checkbox-radio-box">
+                          <mat-checkbox formControlName="rememberMe"  >Remember Me</mat-checkbox>
+                      </div>
+                          
+                      <button class="mat-block" [disabled]=loginForm.invalid mat-raised-button color="primary">Sign up</button>
+  
+  
+  
+                  </form>
+              </div>
+          </mat-card>
+  
+  
+      </div>
+  </div>
