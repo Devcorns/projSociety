@@ -31,5 +31,26 @@ app.post('/api/register', function(req, res) {
 
 })
 
+app.post('/api/login', function(req, res) {
+
+    MongoClient.connect(url, function(err, db) {
+        if (err) throw err;
+        var dbo = db.db("society");
+
+        dbo.collection("customers").insertOne(req.body, function(err, res) {
+            if (err) throw err;
+
+
+
+        });
+        res.end();
+    });
+
+
+
+
+
+})
+
 
 app.listen(process.env.PORT || 3000, () => console.log('Example app listening on port 3000!'))
