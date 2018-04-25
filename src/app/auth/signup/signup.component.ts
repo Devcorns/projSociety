@@ -17,6 +17,8 @@ export class SignupComponent implements OnInit {
   constructor(formbuilder:FormBuilder,private registerService:OwnerRegisterService) { 
     console.log("constructor works");
     this.signupForm = formbuilder.group({
+      towerno:new FormControl("",[Validators.required,Validators.minLength(1)]),
+      flatno:new FormControl("",[Validators.required,Validators.minLength(3)]),
       email:new FormControl("",[Validators.required,Validators.minLength(6),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]),
       mobile:new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(11),Validators.pattern('^[0-9]{10}$')]),
        passwordOne:new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(20),Validators.pattern('')]),

@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Observable';
  
 @Injectable()
 export class LoginService {
-  public headers = new HttpHeaders({'Content-Type': 'application/json', 'charset' : 'UTF-8'});
+  public headers = new HttpHeaders({'Content-Type': 'application/json'});
   configUrl = '/api/login';
   
 
