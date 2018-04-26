@@ -54,6 +54,7 @@ app.post('/api/login', function(req, res) {
         });
 
         var finaljson = JSON.stringify(resultArr);
+        res.json(finaljson);
         console.log(finaljson);
 
         res.end();
