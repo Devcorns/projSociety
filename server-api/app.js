@@ -8,8 +8,10 @@ var url = "mongodb://localhost:27017/society";
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(function(req, res, next) {
-    
-    
+    res.setHeader('Content-Type', 'application/json');
+    res.setHeader('X-Foo', 'bar');
+
+
     res.header("Access-Control-Allow-Origin", "*");
     next();
 });
@@ -36,27 +38,27 @@ app.post('/api/register', function(req, res) {
 })
 
 app.post('/api/login', function(req, res) {
-    res.setHeader('content-type','application/json');
+    res.setHeader('content-type', 'application/json');
     MongoClient.connect(url, function(err, db) {
-        
+
         if (err) throw err;
-         var dbo = db.db("society");
-         var resultArr = [];
-         res.send("Connect Successfully")
-         var cursor1 = dbo.collection("customers").find();
-         console.log(cursor1);
-         cursor1.forEach(function(doc,err){
-            
-             resultArr.push(doc);
-             console.log(doc);
-         });
-         
-         var finaljson = JSON.stringify(resultArr);
-         
-         res.json(finaljson);
-         res.end();
-         
-        
+        var dbo = db.db("society");
+        var resultArr = [];
+        res.send("Connect Successfully")
+        var cursor1 = dbo.collection("customers").find();
+        console.log(cursor1);
+        cursor1.forEach(function(doc, err) {
+
+            resultArr.push(doc);
+            console.log(doc);
+        });
+
+        var finaljson = JSON.stringify(resultArr);
+        console.log(finaljson);
+
+        res.end();
+
+
     });
 
 
