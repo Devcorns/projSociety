@@ -6,7 +6,7 @@ import { Observable } from 'rxjs/Observable';
 @Injectable()
 export class OwnerRegisterService {
   
-  public headers = new HttpHeaders({'Content-Type': 'application/json', 'charset' : 'UTF-8'});
+  public headers = new HttpHeaders({'Content-Type': 'application/json'});
   configUrl = '/api/register';
   
 
@@ -16,6 +16,7 @@ export class OwnerRegisterService {
    }
    registerOwner(data): Observable<any>{
     //console.log(data.value);
+    console.log(data.value);
     return this.http.post<any>(this.configUrl, data.value, {headers:this.headers});
     
    }

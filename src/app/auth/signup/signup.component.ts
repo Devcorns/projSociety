@@ -20,10 +20,12 @@ export class SignupComponent implements OnInit {
       towerno:new FormControl("",[Validators.required,Validators.minLength(1)]),
       flatno:new FormControl("",[Validators.required,Validators.minLength(3)]),
       email:new FormControl("",[Validators.required,Validators.minLength(6),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$")]),
+      username:new FormControl(""),
       mobile:new FormControl("",[Validators.required,Validators.minLength(10),Validators.maxLength(11),Validators.pattern('^[0-9]{10}$')]),
        passwordOne:new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(20),Validators.pattern('')]),
        passwordRe:new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(20),Validators.pattern(''),PasswordValidationService.MatchPassword])
-    });
+    
+      });
 
     
 
@@ -35,7 +37,8 @@ export class SignupComponent implements OnInit {
 
 
   signupform(data){
-    // console.log(data);
+     console.log(data.value.username = data.value.towerno+data.value.flatno);
+    
     this.registerService.registerOwner(data)
     .subscribe(response=>{
       //console.log("now response is "+response);

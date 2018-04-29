@@ -7,12 +7,16 @@
                     <img src="http://www.eatlogos.com/building_logos/png/vector_line_buildings_logo.png" alt="Devcorns innovation">
                 </div>
                 <form class="example-form" [formGroup]="signupForm" (submit)=signupform(signupForm)>
+
                         <mat-form-field class="mat-block">
                                 <input matInput formControlName="towerno" placeholder="Tower No">
                             </mat-form-field>
                         <mat-form-field class="mat-block">
                                 <input matInput formControlName="flatno" placeholder=" Flat No">
                             </mat-form-field>
+                            <mat-form-field class="mat-block hide">
+                                    <input matInput formControlName="username" placeholder="username" >
+                                </mat-form-field>
                     <mat-form-field class="mat-block">
                         <input matInput formControlName="email" placeholder=" Email">
                     </mat-form-field>
