@@ -1,5 +1,4 @@
 <div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
-
     <div fxFlex="320px">
         <mat-card>
             <div fxLayout="column">
@@ -7,16 +6,15 @@
                     <img src="http://www.eatlogos.com/building_logos/png/vector_line_buildings_logo.png" alt="Devcorns innovation">
                 </div>
                 <form class="example-form" [formGroup]="signupForm" (submit)=signupform(signupForm)>
-
-                        <mat-form-field class="mat-block">
-                                <input matInput formControlName="towerno" placeholder="Tower No">
-                            </mat-form-field>
-                        <mat-form-field class="mat-block">
-                                <input matInput formControlName="flatno" placeholder=" Flat No">
-                            </mat-form-field>
-                            <mat-form-field class="mat-block hide">
-                                    <input matInput formControlName="username" placeholder="username" >
-                                </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <input matInput formControlName="towerno" placeholder="Tower No">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <input matInput formControlName="flatno" placeholder=" Flat No">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block hide">
+                        <input matInput formControlName="username" placeholder="username">
+                    </mat-form-field>
                     <mat-form-field class="mat-block">
                         <input matInput formControlName="email" placeholder=" Email">
                     </mat-form-field>
@@ -30,13 +28,8 @@
                         <input type="password" matInput formControlName="passwordRe" placeholder="Re Password">
                     </mat-form-field>
                     <button class="mat-block" [disabled]=signupForm.invalid mat-raised-button color="primary">Sign up</button>
-
-
-
                 </form>
             </div>
         </mat-card>
-
-
     </div>
 </div>
