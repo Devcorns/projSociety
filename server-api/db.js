@@ -75,9 +75,10 @@ router.route('/register').post(function(req, res) {
         } else {
             res.json({ value: 0 });
         }
-
+       
+        mongoose.connection.close();
     });
-
+    
 
 
 

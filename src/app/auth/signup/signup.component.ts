@@ -43,10 +43,10 @@ export class SignupComponent implements OnInit {
     this.registerService.registerOwner(data)
     .subscribe(response=>{
       if(response.value){
-
+        this.openSnackBarUserRegister();
       }else{
         this.userExist = false;
-        this.openSnackBar();
+        this.openSnackBarAlreadyExist();
        
 
       }
@@ -56,9 +56,13 @@ export class SignupComponent implements OnInit {
 
   }
 
-  openSnackBar() {
+  openSnackBarAlreadyExist() {
     this.snackBar.open('User Already Exist', "Try Another User", {
-      duration: 3000});
+      duration: 10000});
+  }
+  openSnackBarUserRegister() {
+    this.snackBar.open('User Registered', "Login Now", {
+      duration: 10000});
   }
   ngOnInit() {
   }
