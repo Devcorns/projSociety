@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
     
     this.registerService.registerOwner(data)
     .subscribe(response=>{
-      //console.log("now response is "+response);
+      console.log("now response is "+response.value);
     },err=>{
       console.log(err);
     });

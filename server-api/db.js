@@ -47,23 +47,41 @@ router.route('/register').post(function(req, res) {
     mongoose.connect(db_url_for_connect).then(item => { console.log("Connected") }).catch(err => { console.log("this is famous error " + err) });
 
     var signupData = new customer(req.body);
-    customer.find({}, (err, data) => {});
-    try {
-        signupData.save()
-            .then(item => {
-                console.log(item);
-                res.json(req.body);
+    console.log(signupData);
+    customer.findOne({ 'username': signupData.username }, (err, doc) => {
+
+        /**
+         * if condition works when username is available
+         * and signupdata send to database server and return value 1 
+         * 
+         * but in else condition 
+         * username already exist and return value 0
+         */
+
+        if (doc == null) {
+            signupData.save()
+                .then(item => {
+                    console.log(item);
 
 
-            })
-            .catch(err => {
-                res.status(400).send("unable to save to database");
-            });
+                    res.json({ value: 1 });
 
 
-    } catch (e) {
-        console.log("error found" + e);
-    }
+                })
+                .catch(err => {
+                    res.status(400).send("unable to save to database");
+                });
+
+
+        } else {
+            res.json({ value: 0 });
+        }
+
+    });
+
+
+
+
 
 
 
