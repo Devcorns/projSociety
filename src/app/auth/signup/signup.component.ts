@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import { OwnerRegisterService } from './owner-register.service'
 import { PasswordValidationService } from './password-validation.service';
+import {MatSnackBar} from '@angular/material';
 
 
 
@@ -12,9 +13,9 @@ import { PasswordValidationService } from './password-validation.service';
   providers: [OwnerRegisterService,PasswordValidationService]
 })
 export class SignupComponent implements OnInit {
- 
+  userExist:boolean =true;
   signupForm: FormGroup;
-  constructor(formbuilder:FormBuilder,private registerService:OwnerRegisterService) { 
+  constructor(formbuilder:FormBuilder,private registerService:OwnerRegisterService,public snackBar:MatSnackBar) { 
     console.log("constructor works");
     this.signupForm = formbuilder.group({
       towerno:new FormControl("",[Validators.required,Validators.minLength(1)]),
@@ -41,11 +42,23 @@ export class SignupComponent implements OnInit {
     
     this.registerService.registerOwner(data)
     .subscribe(response=>{
-      console.log("now response is "+response.value);
+      if(response.value){
+
+      }else{
+        this.userExist = false;
+        this.openSnackBar();
+       
+
+      }
     },err=>{
       console.log(err);
     });
 
+  }
+
+  openSnackBar() {
+    this.snackBar.open('User Already Exist', "Try Another User", {
+      duration: 3000});
   }
   ngOnInit() {
   }

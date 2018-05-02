@@ -52,10 +52,9 @@ router.route('/register').post(function(req, res) {
 
         /**
          * if condition works when username is available
-         * and signupdata send to database server and return value 1 
-         * 
-         * but in else condition 
-         * username already exist and return value 0
+         * signup data send to database server return value 1 
+         * else condition works when username already exist 
+         * return value 0
          */
 
         if (doc == null) {
