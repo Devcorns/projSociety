@@ -18,8 +18,8 @@ export class LoginComponent implements OnInit {
 
   constructor(formBuilder:FormBuilder,private cookieService: CookieService,private loginService:LoginService) { 
      this.loginForm = formBuilder.group({
-      flatNo:new FormControl("",[Validators.minLength(3),Validators.required]),
-      signInPassword:new FormControl("",[Validators.minLength(8),Validators.required]),
+      username:new FormControl("",[Validators.minLength(3),Validators.required]),
+      passwordOne:new FormControl("",[Validators.minLength(8),Validators.required]),
       rememberMe:new FormControl("")
 
      })
@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
     if(data.value.rememberMe==true){
       this.rememberMeCheck();
     }
+   
     this.loginService.loginConnect(data).subscribe(result=>{
       console.log("Data saved" + result);
       

@@ -8,11 +8,11 @@
                 </div>
                 <form [formGroup]="loginForm" (submit)=loginform(loginForm)>
                     <mat-form-field class="mat-block">
-                        <input matInput formControlName="flatNo" placeholder="Flat No">
+                        <input matInput formControlName="username" placeholder="Username">
                     </mat-form-field>
 
                     <mat-form-field class="mat-block">
-                        <input matInput type="password" formControlName="signInPassword" placeholder="Password">
+                        <input matInput type="password" formControlName="passwordOne" placeholder="Password">
                     </mat-form-field>
                     <div class="checkbox-radio-box">
                         <mat-checkbox formControlName="rememberMe">Remember Me</mat-checkbox>
