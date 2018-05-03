@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
 
 
   cookieValue = '';
+  value ='';
   
   loginForm:FormGroup;
 
@@ -44,7 +45,13 @@ export class LoginComponent implements OnInit {
     }
    
     this.loginService.loginConnect(data).subscribe(result=>{
-      console.log("Data saved" + result);
+      
+      if(result.value){
+        console.log("Credentials okay");
+      }
+      else{
+        console.log("Credentials not okay");
+      }
       
     },err=>{
       console.log(err)

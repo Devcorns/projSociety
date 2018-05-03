@@ -75,10 +75,10 @@ router.route('/register').post(function(req, res) {
         } else {
             res.json({ value: 0 });
         }
-       
+
         mongoose.connection.close();
     });
-    
+
 
 
 
@@ -89,31 +89,32 @@ router.route('/register').post(function(req, res) {
 
 });
 
-router.route('/login').post(function(req,res){
+router.route('/login').post(function(req, res) {
     mongoose.connect(db_url_for_connect).then(item => { console.log("Connected") }).catch(err => { console.log("this is famous error " + err) });
     var loginData = new customer(req.body);
     console.log(loginData);
-    customer.find({username:loginData.username,passwordOne:loginData.passwordOne}, (err, doc) => {
-            
-                /**
-                 * if condition works when username & password is available
-                 * signup data send to database server return value 1 
-                 * else condition works when username not exist 
-                 * return value 0
-                 */
-                console.log(doc);
-        
-                // if (doc != null) {
-                    
-                //             res.json({ value: 1 });
-                            
-                // } else {
-                //     res.json({ value: 0 });
-                // }
-               
-                // mongoose.connection.close();
-            });
-    
+    customer.find({ username: loginData.username, passwordOne: loginData.passwordOne }, (err, doc) => {
+
+        /**
+         * if condition works when username & password is available
+         * signup data send to database server return value 1 
+         * else condition works when username not exist 
+         * return value 0
+         */
+        console.log(doc);
+
+        if (doc.length != 0) {
+
+            res.json({ value: 1 });
+
+
+        } else {
+            res.json({ value: 0 });
+        }
+        mongoose.connection.close();
+
+    });
+
 });
 
 
