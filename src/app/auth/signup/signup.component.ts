@@ -13,7 +13,7 @@ import {MatSnackBar} from '@angular/material';
   providers: [OwnerRegisterService,PasswordValidationService]
 })
 export class SignupComponent implements OnInit {
-  userExist:boolean =true;
+ 
   signupForm: FormGroup;
   constructor(formbuilder:FormBuilder,private registerService:OwnerRegisterService,public snackBar:MatSnackBar) { 
     console.log("constructor works");
@@ -45,7 +45,7 @@ export class SignupComponent implements OnInit {
       if(response.value){
         this.openSnackBarUserRegister();
       }else{
-        this.userExist = false;
+        
         this.openSnackBarAlreadyExist();
        
 

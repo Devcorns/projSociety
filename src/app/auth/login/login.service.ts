@@ -16,7 +16,7 @@ export class LoginService {
   }
   
   loginConnect(data){
-    return this.http.post(this.configUrl,data.value,{headers:this.headers});
+    return this.http.post<any>(this.configUrl,data.value,{headers:this.headers});
   }
 
 
