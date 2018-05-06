@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from "./login.service";
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,6 +11,7 @@ import { LoginService } from "./login.service";
   
 })
 export class LoginComponent implements OnInit {
+ 
 
 
   cookieValue = '';
@@ -48,6 +50,7 @@ export class LoginComponent implements OnInit {
       
       if(result.value){
         console.log("Credentials okay");
+
       }
       else{
         console.log("Credentials not okay");
