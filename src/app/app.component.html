@@ -18,19 +18,20 @@
                 <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
                     <div class="left-top-header" fxLayoutGap="20px">
                         <div class="button-row">
-                            <a fxFlex="10px" routerLinkActive="active" routerLink="home" color="default" mat-button-raised>
+
+                            <a mat-button routerLinkActive="active" routerLink="home" color="default">
                                 <mat-icon>home</mat-icon>
                             </a>
-                            <a color="default" mat-button>User</a>
-                            <a mat-raised-button routerLink=".">Link</a>
+
+
 
                         </div>
                     </div>
                     <div class="right-top-header ">
                         <div class="button-row">
-                            <a routerLink="login" color="acent" mat-button>Login</a>
-                            <a routerLink="signup" color="acent" mat-button>Signup</a>
-                            <a color="default" mat-button (click)="drawer.toggle()">
+                            <a routerLink="login" color="default" mat-button>Login</a>
+                            <a routerLink="signup" color="default" mat-button>Signup</a>
+                            <a color="default" mat-button (click)="drawer.toggle()" [hidden]="menu-bar">
                                 <mat-icon>menu</mat-icon>
                             </a>
                         </div>
