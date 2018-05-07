@@ -5,9 +5,7 @@
                 <div class="logo hide" fxLayoutAlign="center center">
                     <img src="http://www.eatlogos.com/building_logos/png/vector_line_buildings_logo.png" alt="Devcorns innovation">
                 </div>
-                <div class="alerady-exist" [hidden]="userExist">
-                    User Already exist
-                </div>
+                
                 <form class="example-form" [formGroup]="signupForm" (submit)=signupform(signupForm)>
                     <mat-form-field class="mat-block">
                         <input matInput formControlName="towerno" placeholder="Tower No">

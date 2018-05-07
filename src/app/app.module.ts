@@ -15,6 +15,8 @@ import { AuthModule } from './auth/auth.module';
 
 
 
+
+
 /**
  * Material imports
  */
@@ -36,6 +38,7 @@ import { AuthModule } from './auth/auth.module';
     RouterModule,
     AppRoutingModule,
     AuthModule,
+
    
     
   ],

@@ -5,11 +5,8 @@ import { HomeComponent } from "./home/home.component";
 const routes: Routes = [
     { path: "home", component: HomeComponent},
     {path:"auth", loadChildren:"./auth/auth.module#AuthModule"},
-    {
-        path: '',
-        redirectTo: '',
-        pathMatch: 'full'
-      }
+    {path:"admin", loadChildren:"./admin/admin.module#AdminModule"},
+    
   
 ];
 

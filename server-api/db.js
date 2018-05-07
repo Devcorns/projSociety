@@ -28,11 +28,12 @@ app.use(function(req, res, next) {
 
 var cus_port = '3000';
 var db_url_for_connect = 'mongodb://localhost:27017/society';
+//var db_url_for_connect = 'mongodb://itprakhar:prakhar123@ds113200.mlab.com:13200/society';
 
 mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 const signup = new mongoose.Schema({
-    username: { type: String, index: true, unique: true },
+    username: { type: String, index: true, unique: true,uppercase:true },
     towerno: { type: String },
     flatno: { type: Number, min: 3, index: true },
     email: { type: String },
@@ -62,7 +63,7 @@ router.route('/register').post(function(req, res) {
                 .then(item => {
                     console.log(item);
 
-
+                    console.log("Data save to data base");
                     res.json({ value: 1 });
 
 
@@ -70,13 +71,15 @@ router.route('/register').post(function(req, res) {
                 .catch(err => {
                     res.status(400).send("unable to save to database");
                 });
+                mongoose.connection.close();
 
 
         } else {
             res.json({ value: 0 });
+            mongoose.connection.close();
         }
 
-        mongoose.connection.close();
+        
     });
 
 
