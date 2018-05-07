@@ -11,7 +11,11 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AuthModule } from './auth/auth.module';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -38,6 +42,11 @@ import { AuthModule } from './auth/auth.module';
     RouterModule,
     AppRoutingModule,
     AuthModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatListModule,
+    MatToolbarModule,
+    MatIconModule
 
    
     

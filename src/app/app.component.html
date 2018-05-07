@@ -1,1 +1,48 @@
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list role="list">
+            <mat-list-item role="listitem">Item 1</mat-list-item>
+            <mat-list-item role="listitem">Item 2</mat-list-item>
+            <mat-list-item role="listitem">Item 3</mat-list-item>
+        </mat-list>
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf="showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+        Toggle extra text
+      </button>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row>
+                <div fxFlex="100" fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="left-top-header" fxLayoutGap="20px">
+                        <div class="button-row">
+                            <a fxFlex="10px" routerLinkActive="active" routerLink="home" color="default" mat-button-raised>
+                                <mat-icon>home</mat-icon>
+                            </a>
+                            <a color="default" mat-button>User</a>
+                            <a mat-raised-button routerLink=".">Link</a>
+
+                        </div>
+                    </div>
+                    <div class="right-top-header ">
+                        <div class="button-row">
+                            <a routerLink="login" color="acent" mat-button>Login</a>
+                            <a routerLink="signup" color="acent" mat-button>Signup</a>
+                            <a color="default" mat-button (click)="drawer.toggle()">
+                                <mat-icon>menu</mat-icon>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </mat-toolbar-row>
+        </mat-toolbar>
+
+
+
+        <router-outlet></router-outlet>
+
+    </div>
+
+</mat-drawer-container>

@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 import { LoginService } from "./login.service";
+import { CanActivate } from '@angular/router';
+import { LoginGuardService } from '../../services/guard-services/login-guard';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  providers:[LoginService]
+  providers:[LoginService,LoginGuardService]
   
 })
 export class LoginComponent implements OnInit {
@@ -45,6 +47,9 @@ export class LoginComponent implements OnInit {
     if(data.value.rememberMe==true){
       this.rememberMeCheck();
     }
+
+  
+
    
     this.loginService.loginConnect(data).subscribe(result=>{
       

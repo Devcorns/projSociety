@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LoginGuardService } from '../services/guard-services/login-guard';
 
 
 
@@ -39,6 +40,6 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatSnackBarModule
   ],
   declarations: [LoginComponent, SignupComponent],
-  providers:[CookieService]
+  providers:[CookieService,LoginGuardService]
 })
 export class AuthModule { }
