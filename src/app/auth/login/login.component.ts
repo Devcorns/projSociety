@@ -57,7 +57,7 @@ export class LoginComponent implements OnInit {
 
       if(result.value){
         console.log("Credentials okay");
-        this.router.navigate(['signup'])
+        this.router.navigate(['admin/userpanel']);
 
       }
       else{

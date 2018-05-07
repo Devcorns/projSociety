@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./userpanel.component.css']
 })
 export class UserpanelComponent implements OnInit {
-
+  panelOpenState: boolean = false;
   constructor() { }
 
   ngOnInit() {

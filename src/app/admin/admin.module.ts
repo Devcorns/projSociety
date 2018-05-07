@@ -11,7 +11,8 @@ import { InchargeComponent } from './incharge/incharge.component';
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+   
   ],
   declarations: [AdminpanelComponent, UserpanelComponent, InchargeComponent],
   providers:[]
