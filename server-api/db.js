@@ -104,8 +104,8 @@ router.route('/login').post(function(req, res) {
         console.log(doc);
 
         if (doc.length != 0) {
-
-            res.json({ value: 1 });
+            console.log(doc.username);
+            res.json({ value: 1, user: doc.username });
 
 
         } else {
