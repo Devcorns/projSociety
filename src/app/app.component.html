@@ -2,20 +2,31 @@
     <mat-drawer #drawer class="example-sidenav" mode="side" fxFlex="320px" fxLayout="row">
         
         <mat-nav-list class="mat-block">
-                <mat-list-item routerLink="admin/userpanel/user/file-complaint">
+                <mat-list-item routerLink="user/file-complaint">
                     <a matLine>File Complaint</a>
                     <button mat-icon-button>
                         <mat-icon>report</mat-icon>
                     </button>
                 </mat-list-item>
-                <mat-list-item >
+                <mat-list-item routerLink="user/view-complaint" >
                     <a matLine> Complaint Status</a>
+                    <button mat-icon-button>
+                        <mat-icon>report</mat-icon>
+                    </button>
+                </mat-list-item>
+                <mat-list-item routerLink="admin/settings">
+                    <a matLine>Admin Setting</a>
                     <button mat-icon-button>
                         <mat-icon>report</mat-icon>
                     </button>
                 </mat-list-item>
            
           </mat-nav-list>
+          
+            
+       
+     
+     
 
 
     </mat-drawer>

@@ -1,0 +1,54 @@
+<ul>
+  <li>Profile</li>
+  <li>Issues</li>
+  <li>society profile</li>
+  <li>Parking Issue</li>
+</ul>
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
+    
+        <div fxFlex="600px">
+           
+                <div fxLayout="column">
+                    <mat-accordion>
+                        <mat-expansion-panel>
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Issues
+                            </mat-panel-title>
+                            <mat-panel-description>
+                              Eg. Water,Electricity....
+                            </mat-panel-description>
+                          </mat-expansion-panel-header>
+                          <mat-form-field class="mat-block">
+                              <input matInput placeholder="Enter Issue" >
+                            </mat-form-field>
+                          <div class="mat-block">
+                              <button mat-raised-button color="primary">Primary</button>
+                          </div>
+                          <hr class="mt-20 mb-20">
+                          <div class="mat-block inline-checkbox mt-10">
+                              <mat-checkbox  >Water</mat-checkbox>
+                              <mat-checkbox  >Electricity</mat-checkbox>
+                              <mat-checkbox  >Parking</mat-checkbox>
+                              <mat-checkbox  >Furniture</mat-checkbox>
+                              <mat-checkbox  >Guard</mat-checkbox>
+                          </div>
+                          
+                        </mat-expansion-panel>
+                        <mat-expansion-panel (opened)="panelOpenState = true"
+                                            (closed)="panelOpenState = false">
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                              Self aware panel
+                            </mat-panel-title>
+                            <mat-panel-description>
+                              Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                            </mat-panel-description>
+                          </mat-expansion-panel-header>
+                          <p>I'm visible because I am open</p>
+                        </mat-expansion-panel>
+                      </mat-accordion>
+                  </div>
+               
+            </div>
+        </div>
