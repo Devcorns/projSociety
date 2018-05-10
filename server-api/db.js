@@ -41,6 +41,9 @@ const signup = new mongoose.Schema({
     passwordOne: { type: String, min: 8 },
     date: { type: Date, default: Date.now }
 });
+const issueTable = new mongoose.Schema({
+    
+});
 
 const customer = mongoose.model('customer', signup);
 
@@ -117,6 +120,9 @@ router.route('/login').post(function(req, res) {
         mongoose.connection.close();
 
     });
+
+});
+router.route("/saveissue").post(function(req,res){
 
 });
 

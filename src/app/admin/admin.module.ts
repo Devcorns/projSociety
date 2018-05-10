@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
+
+import { HttpClientModule } from '@angular/common/http';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { SettingsComponent } from './settings/settings.component';
@@ -14,6 +17,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { SettingSenderService } from './settings/setting-sender.service';
 
 
 
@@ -26,11 +30,14 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     FlexLayoutModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
 
    
   ],
   declarations: [SettingsComponent, ViewComplaintComponent],
-  providers:[]
+  providers:[SettingSenderService]
 })
 export class AdminModule { }

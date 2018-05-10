@@ -1,9 +1,4 @@
-<ul>
-  <li>Profile</li>
-  <li>Issues</li>
-  <li>society profile</li>
-  <li>Parking Issue</li>
-</ul>
+
 <div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
     
         <div fxFlex="600px">
@@ -13,19 +8,21 @@
                         <mat-expansion-panel>
                           <mat-expansion-panel-header>
                             <mat-panel-title>
-                                Issues
+                                Issues Type
                             </mat-panel-title>
                             <mat-panel-description>
                               Eg. Water,Electricity....
                             </mat-panel-description>
                           </mat-expansion-panel-header>
-                          <mat-form-field class="mat-block">
-                              <input matInput placeholder="Enter Issue" >
-                            </mat-form-field>
-                          <div class="mat-block">
-                              <button mat-raised-button color="primary">Primary</button>
-                          </div>
-                          <hr class="mt-20 mb-20">
+                          <form [formGroup]="issueForm" (submit)=issueEntry(issueForm) >
+                              <mat-form-field class="mat-block">
+                                  <input matInput formControlName="issueType"  placeholder="Enter Issue Type" >
+                              </mat-form-field>
+                              <div class="mat-block">
+                                  <button mat-raised-button color="primary">Save Issue</button>
+                              </div>
+                          </form>
+                          
                           <div class="mat-block inline-checkbox mt-10">
                               <mat-checkbox  >Water</mat-checkbox>
                               <mat-checkbox  >Electricity</mat-checkbox>
