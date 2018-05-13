@@ -7,6 +7,7 @@ import { Observable } from 'rxjs/Observable';
 export class SettingSenderService {
   public headers = new HttpHeaders({'Content-Type': 'application/json'});
   configUrl = "api/issueSave" 
+  urlForAutoHit="api/issueType"
   constructor(public http:HttpClient) { 
     console.info("setting service start working");
   }
@@ -16,5 +17,8 @@ export class SettingSenderService {
    //(this.configUrl,data.value,{headers:this.headers});
   }
 
+  showIssues(){
+    return this.http.post<any>(this.urlForAutoHit,"",{headers:this.headers});
+  }
 
 }

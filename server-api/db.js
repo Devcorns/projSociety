@@ -41,15 +41,16 @@ const signup = new mongoose.Schema({
     passwordOne: { type: String, min: 8 },
     date: { type: Date, default: Date.now }
 });
-const issueTable = new mongoose.Schema({
-    
-});
+
 
 const customer = mongoose.model('customer', signup);
 
-router.route('/register').post(function(req, res) {
+function mongooseConnect(){
     mongoose.connect(db_url_for_connect).then(item => { console.log("Connected") }).catch(err => { console.log("this is famous error " + err) });
-
+}
+router.route('/register').post(function(req, res) {
+    
+    mongooseConnect();
     var signupData = new customer(req.body);
     console.log(signupData);
     customer.findOne({ 'username': signupData.username }, (err, doc) => {
@@ -96,7 +97,7 @@ router.route('/register').post(function(req, res) {
 });
 
 router.route('/login').post(function(req, res) {
-    mongoose.connect(db_url_for_connect).then(item => { console.log("Connected") }).catch(err => { console.log("this is famous error " + err) });
+    mongooseConnect();
     var loginData = new customer(req.body);
     console.log(loginData);
     customer.find({ username: loginData.username, passwordOne: loginData.passwordOne }, (err, doc) => {
@@ -122,8 +123,48 @@ router.route('/login').post(function(req, res) {
     });
 
 });
-router.route("/saveissue").post(function(req,res){
 
+
+const issueTable = new mongoose.Schema({
+    issueType:{type:String,unique:true},
+    isVisible:{type:Boolean}
+});
+const issuetable = mongoose.model('issuetables', issueTable);
+router.route("/issueSave").post(function(req,res){
+   
+    mongooseConnect();
+    
+     var issueData = new issuetable({issueType:req.body.issueType,"isVisible":false});
+     issuetable.find({issueType:req.body.issueType},(err,doc)=>{
+         if(doc.length==0){
+            issueData.save();
+            
+            res.json({result:1});
+         }
+         else{
+             console.log(doc.length);
+            res.json({result:0});
+         }
+     }
+    
+    );
+     
+     
+    
+    
+});
+router.route("/issueType").post((req,res)=>{
+    mongooseConnect();
+   
+    var issuetableData = new issuetable();
+    issuetable.find({},(err,doc)=>{
+        
+       
+       
+        res.json(doc);
+    })
+    
+    
 });
 
 

@@ -22,14 +22,16 @@
                                   <button mat-raised-button color="primary">Save Issue</button>
                               </div>
                           </form>
-                          
-                          <div class="mat-block inline-checkbox mt-10">
-                              <mat-checkbox  >Water</mat-checkbox>
-                              <mat-checkbox  >Electricity</mat-checkbox>
-                              <mat-checkbox  >Parking</mat-checkbox>
-                              <mat-checkbox  >Furniture</mat-checkbox>
-                              <mat-checkbox  >Guard</mat-checkbox>
-                          </div>
+                          <!-- <form [formGroup]="issueSelectedForm" (submit)=selectIssue(issueSelectedForm) > -->
+                            <div class="mat-block inline-checkbox mt-10">
+                                <mat-checkbox *ngFor="let issuesValues of issueCheckBox"  >
+                                  {{issuesValues}}
+                                </mat-checkbox>
+                            </div>
+                            <div class="mat-block  mt-10">
+                                <button mat-raised-button color="primary">Select Issue to Show </button>
+                            </div>
+                          <!-- </form> -->
                           
                         </mat-expansion-panel>
                         <mat-expansion-panel (opened)="panelOpenState = true"
