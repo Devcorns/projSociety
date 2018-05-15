@@ -12,12 +12,13 @@ export class SettingsComponent implements OnInit {
   issueForm:FormGroup;
   issueSelectedForm:FormGroup;
   issueCheckBox=[];
+  
  
   constructor(private settingService:SettingSenderService,public fb:FormBuilder) {
     this.issueForm = this.fb.group({
       issueType : new FormControl("",Validators.required)
     });
-    
+   
 
    }
 
