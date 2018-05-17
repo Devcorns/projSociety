@@ -17,6 +17,7 @@ import {MatSelectModule} from '@angular/material/select';
 
 
 import { ViewComplaintComponent } from './view-complaint/view-complaint.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -32,6 +33,6 @@ import { ViewComplaintComponent } from './view-complaint/view-complaint.componen
     FormsModule,
     ReactiveFormsModule
   ],
-  declarations: [FileComplaintComponent, ViewComplaintComponent]
+  declarations: [FileComplaintComponent, ViewComplaintComponent, ProfileComponent]
 })
 export class UserModule { }

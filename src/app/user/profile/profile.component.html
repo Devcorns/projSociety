@@ -1,0 +1,117 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box mb-20 mt-20">
+    
+        <div fxFlex="600px">
+            <mat-card>
+                <div fxLayout="column">
+                    <div class="ownerwithtenatn"  >
+                       
+                        <div class="owner" >
+                          
+                            <img src="https://pbs.twimg.com/profile_images/534547867671617536/kNEp7oP9_400x400.jpeg" alt="Owner">
+                        </div>
+                        <div class="tenant"  >
+                          
+                            <img src="https://media.licdn.com/dms/image/C4D03AQEr8jvoSo1adQ/profile-displayphoto-shrink_200_200/0?e=1531958400&v=beta&t=UfKFc-CvorVMxrlTw7AfpHgnevkH8F5-g3uHbE_o8Ws" alt="Tenant">
+                        </div>
+                    </div>
+                  
+
+                    <form  [formGroup]="fileUploadForm" (submit)=fileupload(fileUploadForm)>
+                        <img [src]="profilePic" class="mb-20">
+                        <div class="upload-file mb-20">
+                            <input type="file" formControlName="profilePicUpload" (change)=onFileSelected($event)  class="mat-block" placeholder="Firstname" value="">
+                        </div>
+                            
+                        
+                        <button class=""  mat-raised-button color="primary">Save </button>
+                        
+                    </form>
+
+                  </div>
+                </mat-card>
+        </div>
+      </div>
+
+      <div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box mb-20">
+          
+              <div fxFlex="600px">
+                  <mat-card>
+                      <mat-card-header>
+                          
+                          <mat-card-title>
+                           <h4 class="card-head">Documented Information</h4> 
+                          </mat-card-title>
+                          
+                        </mat-card-header>
+                      <div fxLayout="column">
+                          <form [formGroup]="userProfileDefault" (submit)=updateProfileDefault(userProfileDefault)>
+                          <mat-form-field class="mat-block">
+                              <input matInput formControlName="username" placeholder="Username" value="A1003" >
+                          </mat-form-field>
+                          <mat-form-field class="mat-block">
+                              <input matInput  formControlName="regname" placeholder="Registered Name" value="Vishal Bajaj" >
+                          </mat-form-field>
+                          <mat-form-field class="mat-block">
+                              <input matInput  formControlName="occupiedby" placeholder="Who Lives In" value="Tenant" >
+                          </mat-form-field>
+                          <mat-form-field class="mat-block">
+                              <input matInput  formControlName="tenantname" placeholder="Tenant Name" value="Prakhar Mathur" >
+                          </mat-form-field>
+                        </form>
+                        </div>
+                        </mat-card>
+              </div>
+              </div>
+
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box mb-20">
+    
+        <div fxFlex="600px">
+            <mat-card>
+                <div fxLayout="column">
+                    
+                    
+                    <form [formGroup]="userProfile" (submit)=updateProfile(userProfile)>
+                        
+                        
+                        <mat-form-field class="mat-block">
+                            <input matInput  formControlName="userage" placeholder="Age" value="">
+                        </mat-form-field>
+                        <mat-form-field class="mat-block">
+                            <input matInput  formControlName="email" placeholder="Email" value="">
+                        </mat-form-field>
+                        <mat-form-field class="mat-block">
+                            <input matInput  formControlName="mobile" placeholder="Mobile" value="">
+                        </mat-form-field>
+                        <mat-form-field class="mat-block">
+                            <input matInput  formControlName="memberinflat" placeholder="Member in flat" value="">
+                        </mat-form-field>
+                        
+                        <button   mat-raised-button color="primary">Save </button>
+                    </form>
+                </div>
+            </mat-card>
+    
+    
+        </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box mb-20">
+        
+            <div fxFlex="600px">
+                <mat-card>
+                    <div fxLayout="column">
+                        
+                        <div class="doc-section">
+                            <div class="aadhar-section">
+                                <img src="http://www.thecitizen.in/NewsImages/542432Aadhar-card-at-door.jpg" />
+                            </div>
+                            <div class="pancard">
+                                 <img src="https://www.consumercomplaints.in/thumb.php?complaints=433912&comment=1956403&src=pan%20card.jpg&wmax=900&hmax=900&quality=85&nocrop=1" />
+                            </div>
+
+                        </div>
+                    </div>
+                </mat-card>
+        
+        
+            </div>
+        </div>

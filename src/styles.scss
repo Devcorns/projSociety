@@ -32,7 +32,13 @@ body {
 .mat-block {
     width: 100%;
 }
-
+.card-head{
+    font-size: 18px;
+    margin-top:0px;
+}
+.mat-card .mat-card-header-text{
+    margin:0
+}
 .checkbox-radio-box {
     padding: 0px 0px 20px 0px;
 }
@@ -47,4 +53,35 @@ body {
 .inline-checkbox .mat-checkbox{
     flex:33%;
     max-width:33%;
+}
+.doc-section{
+    & > div{
+
+        text-align: center;
+    }
+
+    & img{
+        max-width:100%;
+    }
+}
+.ownerwithtenatn {
+    & > div{
+        
+        
+        overflow: hidden;
+        position: relative;
+        width:100px;
+
+        & img{
+            
+            max-width:100%;
+            position: static;
+            
+            
+            
+
+            
+        }
+    }
+    
 }

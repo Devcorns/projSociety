@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { SettingSenderService } from "./setting-sender.service";
 import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
 
+
+
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -34,7 +36,12 @@ export class SettingsComponent implements OnInit {
      }
      console.log(this.issueCheckBox);
     })
+
+    
   }
+
+
+  
 
   issueEntry(data){
 
