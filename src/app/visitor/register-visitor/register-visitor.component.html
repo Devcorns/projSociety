@@ -1,0 +1,72 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
+
+    <div fxFlex="600px" class="mb-20">
+        <mat-card>
+            <mat-card-header>Visitor Information</mat-card-header>
+            <div fxLayout="column">
+                <form class="example-form">
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Visitor Name">
+                    </mat-form-field>
+
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Mobile No">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <mat-select placeholder="Relation">
+                            <mat-option *ngFor="let relItem of relation" [value]="relItem.value">
+                                {{ relItem.viewValue }}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Address">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Purpose of visit">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Time in">
+                    </mat-form-field>
+
+                    <a mat-raised-button color="primary">Check Completed</a>
+
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box mb-20">
+
+    <div fxFlex="600px">
+        <mat-card>
+            <div fxLayout="column">
+                <form>
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Flat No">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <input matInput placeholder="Concerned person">
+                    </mat-form-field>
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</div>
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
+
+    <div fxFlex="600px">
+        <mat-card>
+            <div fxLayout="column">
+                <form>
+                    <mat-radio-group>
+                        <mat-radio-button value="1">Approved</mat-radio-button>
+                        <mat-radio-button value="2">Not Approved</mat-radio-button>
+                    </mat-radio-group>
+
+
+                </form>
+            </div>
+        </mat-card>
+    </div>
+</div>
