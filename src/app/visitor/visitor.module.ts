@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -24,7 +25,8 @@ import { RegisterVisitorComponent } from './register-visitor/register-visitor.co
     MatCardModule,
     MatSelectModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    MatDialogModule
   ],
   declarations: [RegisterVisitorComponent]
 })
