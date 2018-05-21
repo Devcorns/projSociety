@@ -14,6 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { VisitorRoutingModule } from './visitor-routing.module';
 import { RegisterVisitorComponent } from './register-visitor/register-visitor.component';
+import { DialogSectionComponent } from './dialog-section/dialog-section.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { RegisterVisitorComponent } from './register-visitor/register-visitor.co
     MatRadioModule,
     MatDialogModule
   ],
-  declarations: [RegisterVisitorComponent]
+  entryComponents: [DialogSectionComponent],
+  declarations: [RegisterVisitorComponent, DialogSectionComponent]
 })
 export class VisitorModule { }
