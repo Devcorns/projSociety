@@ -66,10 +66,23 @@
                         <mat-radio-button value="1">Approved</mat-radio-button>
                         <mat-radio-button value="2">Not Approved</mat-radio-button>
                     </mat-radio-group>
-                    <button mat-raised-button (click)="openDialog()">Pick one</button>
+                   
 
 
                 </form>
+                <ol>
+                    <li>
+                      <mat-form-field>
+                        <input matInput  placeholder="What's your name?">
+                      </mat-form-field>
+                    </li>
+                    <li>
+                      <button mat-raised-button (click)="openDialog()">Pick one</button>
+                    </li>
+                    <li *ngIf="animal">
+                      You chose: <i>{{animal}}</i>
+                    </li>
+                  </ol>
             </div>
         </mat-card>
     </div>

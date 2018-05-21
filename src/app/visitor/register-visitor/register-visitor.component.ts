@@ -9,46 +9,28 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
   styleUrls: ['./register-visitor.component.css']
 })
 export class RegisterVisitorComponent implements OnInit {
-  dialog: any;
-  panelOpenState: boolean = false;
+  
   relation = [
     {value: 'Company', viewValue: 'Company'},
     {value: 'Relation', viewValue: 'Relation'}
     
   ];
   
-  constructor() { }
+  constructor(public dialog:MatDialog) { }
 
   ngOnInit() {
   }
 
 
-  openDialog(): void {
-    let dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
-      width: '250px'
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      
-    });
-  }
 
 }
 
-@Component({
-  selector: 'dialog-overview-example-dialog',
-  
-  templateUrl: './register-visitor.component.html',
-})
-export class DialogOverviewExampleDialog {
+/**
+ * 
+ * 
+ * https://www.youtube.com/watch?v=zgLgallOcCQ
+ * 
+ * for dialog
+ */
 
-  constructor(
-    public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
 
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-}
