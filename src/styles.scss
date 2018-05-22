@@ -27,6 +27,12 @@ body {
             width: 200px;
         }
     }
+    mat-radio-button{
+        margin-right:20px;
+        &:last-child{
+            margin-right:0;
+        }
+    }
 }
 
 .mat-block {

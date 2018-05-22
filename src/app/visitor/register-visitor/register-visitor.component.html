@@ -48,43 +48,10 @@
                     <mat-form-field class="mat-block">
                         <input matInput placeholder="Concerned person">
                     </mat-form-field>
-                    <a mat-raised-button color="primary">Submit</a>
+                    <a mat-raised-button color="primary" (click)="openDialog()">Confirmation</a>
 
                 </form>
             </div>
-        </mat-card>
-    </div>
-</div>
-<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
-
-    <div fxFlex="600px">
-        <mat-card>
-            <div fxLayout="column">
-                <form>
-
-                    <mat-radio-group>
-                        <mat-radio-button value="1">Approved</mat-radio-button>
-                        <mat-radio-button value="2">Not Approved</mat-radio-button>
-                    </mat-radio-group>
-                   
-
-
-                </form>
-                <ol>
-                    <li>
-                      <mat-form-field>
-                        <input matInput  placeholder="What's your name?">
-                      </mat-form-field>
-                    </li>
-                    <li>
-                      <button mat-raised-button (click)="openDialog()">Pick one</button>
-                    </li>
-                    <li *ngIf="animal">
-                      You chose: <i>{{animal}}</i>
-                    </li>
-                  </ol>
-            </div>
-            
         </mat-card>
     </div>
 </div>

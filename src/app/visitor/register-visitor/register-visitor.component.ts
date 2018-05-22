@@ -34,7 +34,7 @@ export class RegisterVisitorComponent implements OnInit {
 
   openDialog(): void {
     let dialogRef = this.dialog.open(DialogSectionComponent, {
-      width: '250px',
+      width: '300px',
       data: { name: this.name, animal: this.animal }
     });
 

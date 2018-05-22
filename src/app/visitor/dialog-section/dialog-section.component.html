@@ -1,3 +1,31 @@
-<p>
-  dialog-section works!
-</p>
+<div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
+  
+      <div fxFlex="">
+          
+              <div fxLayout="column">
+                  <form>
+  
+                      <mat-radio-group >
+                          <mat-radio-button value="1">Approved</mat-radio-button>
+                          <mat-radio-button value="2">Not Approved</mat-radio-button>
+                      </mat-radio-group>
+
+                      <mat-form-field class="mat-block">
+                        <textarea matInput placeholder="Leave a message"></textarea>
+                      </mat-form-field>
+                     
+                      <button mat-raised-button (click)="openDialog()">Submit </button>
+  
+                  </form>
+                  
+                        
+                     
+                        
+                     
+                      
+                   
+              </div>
+              
+          
+      </div>
+  </div>
