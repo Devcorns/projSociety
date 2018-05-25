@@ -10,7 +10,8 @@ import { DialogSectionComponent } from '../dialog-section/dialog-section.compone
   styleUrls: ['./register-visitor.component.css']
 })
 export class RegisterVisitorComponent implements OnInit {
-  
+  visitorFirstForm:FormGroup;
+
   relation = [
     {value: 'Company', viewValue: 'Company'},
     {value: 'Relation', viewValue: 'Relation'}
@@ -18,10 +19,24 @@ export class RegisterVisitorComponent implements OnInit {
   ];
   
   constructor(
-    public dialog:MatDialog
+    public dialog:MatDialog,
+    private fb:FormBuilder
   
   
-  ) { }
+  ) { 
+
+    this.visitorFirstForm = this.fb.group({
+      visitorname:new FormControl(),
+      
+visitorno:new FormControl(),
+visitorid:new FormControl(),
+visitoraddr:new FormControl(),
+visitorrelation:new FormControl(),
+visitorpurpose:new FormControl(),
+visitorin:new FormControl()
+    })
+
+  }
 
   ngOnInit() {
   }
@@ -44,6 +59,9 @@ export class RegisterVisitorComponent implements OnInit {
     });
   }
 
+  submitFirstForm(data){
+    console.log(data);
+  }
 
 
 
