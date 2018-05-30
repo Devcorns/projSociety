@@ -4,32 +4,46 @@
         <mat-card>
             <mat-card-header>Visitor Information</mat-card-header>
             <div fxLayout="column">
+<<<<<<< HEAD
                 <form class="example-form" [formGroup]="visitorFormFirstCheck" (submit)=submitFirstCheck(visitorFormFirstCheck)>
                     <mat-form-field class="mat-block">
                         <input matInput formControlName="visitorName" placeholder="Visitor Name">
+=======
+                <form [formGroup]="visitorFirstForm" (submit)=submitFirstForm(visitorFirstForm)>
+                    <mat-form-field class="mat-block">
+                        <input formControlName="visitorname" matInput placeholder="Visitor Name">
+>>>>>>> 81e3ac7ccbe42918b0983de69f4e4e32be450efc
                     </mat-form-field>
 
                     <mat-form-field class="mat-block">
-                        <input matInput placeholder="Mobile No">
+                        <input matInput formControlName="visitorno" placeholder="Mobile No">
                     </mat-form-field>
                     <mat-form-field class="mat-block">
-                        <mat-select placeholder="Relation">
+                        <input matInput formControlName="visitorid" placeholder="AAdhar Card or PanCard">
+                    </mat-form-field>
+                    <mat-form-field class="mat-block">
+                        <mat-select formControlName="visitorrelation" placeholder="Relation">
                             <mat-option *ngFor="let relItem of relation" [value]="relItem.value">
                                 {{ relItem.viewValue }}
                             </mat-option>
                         </mat-select>
                     </mat-form-field>
                     <mat-form-field class="mat-block">
-                        <input matInput placeholder="Address">
+                        <input matInput formControlName="visitoraddr" placeholder="Address">
                     </mat-form-field>
                     <mat-form-field class="mat-block">
-                        <input matInput placeholder="Purpose of visit">
+                        <input matInput formControlName="visitorpurpose" placeholder="Purpose of visit">
                     </mat-form-field>
                     <mat-form-field class="mat-block">
-                        <input matInput placeholder="Time in">
+                        <input matInput formControlName="visitorin" placeholder="Time in">
                     </mat-form-field>
+<<<<<<< HEAD
 
                     <button [disabled]="visitorFormFirstCheck.invalid" mat-raised-button color="primary">Check Completed</button>
+=======
+                    <input type="checkbox" formControlName="let cusCheck of checkTs" />
+                    <button mat-raised-button color="primary">Check Completed</button>
+>>>>>>> 81e3ac7ccbe42918b0983de69f4e4e32be450efc
 
                 </form>
             </div>

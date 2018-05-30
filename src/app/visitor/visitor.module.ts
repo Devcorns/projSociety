@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+<<<<<<< HEAD
 import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
+=======
+import { FormsModule,ReactiveFormsModule } from "@angular/forms";
+>>>>>>> 81e3ac7ccbe42918b0983de69f4e4e32be450efc
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';

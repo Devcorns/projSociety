@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder }  from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray }  from '@angular/forms';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { DialogSectionComponent } from '../dialog-section/dialog-section.component';
 
@@ -10,8 +10,16 @@ import { DialogSectionComponent } from '../dialog-section/dialog-section.compone
   styleUrls: ['./register-visitor.component.css']
 })
 export class RegisterVisitorComponent implements OnInit {
+<<<<<<< HEAD
   visitorFormFirstCheck:FormGroup;
 
+=======
+  visitorFirstForm:FormGroup;
+  checkTs=[
+    {value:'first',viewValue:'first'},
+    {value:'second',viewValue:'second'},
+  ];
+>>>>>>> 81e3ac7ccbe42918b0983de69f4e4e32be450efc
   relation = [
     {value: 'Company', viewValue: 'Company'},
     {value: 'Relation', viewValue: 'Relation'}
@@ -21,6 +29,7 @@ export class RegisterVisitorComponent implements OnInit {
   constructor(
     public dialog:MatDialog,
     private fb:FormBuilder
+<<<<<<< HEAD
   ) {
       this.visitorFormFirstCheck = this.fb.group({
         visitorName:new FormControl("",[Validators.required,Validators.minLength(3)])
@@ -28,6 +37,24 @@ export class RegisterVisitorComponent implements OnInit {
 
 
    }
+=======
+  
+  
+  ) { 
+
+    this.visitorFirstForm = this.fb.group({
+      visitorname:new FormControl(),
+visitorno:new FormControl(),
+visitorid:new FormControl(),
+visitoraddr:new FormControl(),
+visitorrelation:new FormControl(),
+visitorpurpose:new FormControl(),
+visitorin:new FormControl(),
+checkTs: new FormArray([])
+    })
+
+  }
+>>>>>>> 81e3ac7ccbe42918b0983de69f4e4e32be450efc
 
   ngOnInit() {
   }
@@ -50,6 +77,9 @@ export class RegisterVisitorComponent implements OnInit {
     });
   }
 
+  submitFirstForm(data){
+    console.log(data);
+  }
 
 
 
