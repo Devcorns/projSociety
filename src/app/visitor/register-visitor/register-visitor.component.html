@@ -4,9 +4,9 @@
         <mat-card>
             <mat-card-header>Visitor Information</mat-card-header>
             <div fxLayout="column">
-                <form class="example-form">
+                <form class="example-form" [formGroup]="visitorFormFirstCheck" (submit)=submitFirstCheck(visitorFormFirstCheck)>
                     <mat-form-field class="mat-block">
-                        <input matInput placeholder="Visitor Name">
+                        <input matInput formControlName="visitorName" placeholder="Visitor Name">
                     </mat-form-field>
 
                     <mat-form-field class="mat-block">
@@ -29,7 +29,7 @@
                         <input matInput placeholder="Time in">
                     </mat-form-field>
 
-                    <a mat-raised-button color="primary">Check Completed</a>
+                    <button [disabled]="visitorFormFirstCheck.invalid" mat-raised-button color="primary">Check Completed</button>
 
                 </form>
             </div>

@@ -1,53 +1,51 @@
-
 <div fxLayout="row" fxLayoutAlign="center center" class="center-panel-box">
-    
-        <div fxFlex="600px">
-           
-                <div fxLayout="column">
-                    <mat-accordion>
-                        <mat-expansion-panel>
-                          <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                Issues Type
-                            </mat-panel-title>
-                            <mat-panel-description>
-                              Eg. Water,Electricity....
-                            </mat-panel-description>
-                          </mat-expansion-panel-header>
-                          <form [formGroup]="issueForm" (submit)=issueEntry(issueForm) >
-                              <mat-form-field class="mat-block">
-                                  <input matInput formControlName="issueType"  placeholder="Enter Issue Type" >
-                              </mat-form-field>
-                              <div class="mat-block">
-                                  <button mat-raised-button color="primary">Save Issue</button>
-                              </div>
-                          </form>
-                           <!-- <form [formGroup]="issueSelectedForm" (submit)=selectIssue(issueSelectedForm) >  -->
-                            <div class="mat-block inline-checkbox mt-10">
-                                <mat-checkbox *ngFor="let issuesValues of issueCheckBox"  [formControlName]="prop.key"  [id]="prop.key" >
-                                  {{issuesValues}}
-                                </mat-checkbox>
-                            </div>
-                            <div class="mat-block  mt-10">
-                                <button mat-raised-button color="primary">Select Issue to Show </button>
-                            </div>
-                          <!-- </form> -->
-                          
-                        </mat-expansion-panel>
-                        <mat-expansion-panel (opened)="panelOpenState = true"
-                                            (closed)="panelOpenState = false">
-                          <mat-expansion-panel-header>
-                            <mat-panel-title>
-                              Self aware panel
-                            </mat-panel-title>
-                            <mat-panel-description>
-                              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-                            </mat-panel-description>
-                          </mat-expansion-panel-header>
-                          <p>I'm visible because I am open</p>
-                        </mat-expansion-panel>
-                      </mat-accordion>
-                  </div>
-               
-            </div>
+
+    <div fxFlex="600px">
+
+        <div fxLayout="column">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Issues Type
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Eg. Water,Electricity....
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <form [formGroup]="issueForm" (submit)=issueEntry(issueForm)>
+                        <mat-form-field class="mat-block">
+                            <input matInput formControlName="issueType" placeholder="Enter Issue Type">
+                        </mat-form-field>
+                        <div class="mat-block">
+                            <button mat-raised-button color="primary">Save Issue</button>
+                        </div>
+                    </form>
+                    <form [formGroup]="issueSelectedForm" (submit)=selectIssue()>
+                        <div class="mat-block inline-checkbox mt-10" formArrayName="issueTypes" *ngFor="let issuesValues of issueSelectedForm.get('issueTypes')['controls']; let i = index">
+                            <mat-checkbox formControlName="{{i}}">
+                                {{issueSelectedForm.get('issueTypes').value[i]}}
+                            </mat-checkbox>
+                        </div>
+                        <div class="mat-block  mt-10">
+                            <button mat-raised-button color="primary">Select Issue to Show </button>
+                        </div>
+                    </form>
+
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Self aware panel
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>I'm visible because I am open</p>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
+
+    </div>
+</div>

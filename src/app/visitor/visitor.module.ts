@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatInputModule} from '@angular/material/input';
@@ -27,7 +28,9 @@ import { DialogSectionComponent } from './dialog-section/dialog-section.componen
     MatSelectModule,
     MatButtonModule,
     MatRadioModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   entryComponents: [DialogSectionComponent],
   declarations: [RegisterVisitorComponent, DialogSectionComponent]
